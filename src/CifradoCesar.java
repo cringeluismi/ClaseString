@@ -15,6 +15,12 @@ public class CifradoCesar {
 
         for (int i = 0; i < sinCifrado.length; i++) {
             sinCifrado[i] += clave;
+            if (sinCifrado[i] > 90) {
+                sinCifrado[i] -= 26;
+            }
+            if (sinCifrado[i] < 65) {
+                sinCifrado[i] += 26;
+            }
         }
 
         System.out.println(sinCifrado);
