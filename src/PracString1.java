@@ -17,13 +17,17 @@ public class PracString1 {
 
         for (int i = 0; i < charArray.length; i++) {
             if (charArray[i] != ' ') {
-                if (charArray[i] == 'A' || charArray[i] == 'E' || charArray[i] == 'I' || charArray[i] == 'O' || charArray[i] == 'U' && contVocales < 3) {
+                if (charArray[i] == 'A' || charArray[i] == 'E' || charArray[i] == 'I' || charArray[i] == 'O' || charArray[i] == 'U') {
                     contVocales++;
-                } else if (contVocales>=3){
+                }
+                if (contVocales>3){
                     contPalabras++;
                     contVocales = 0;
                 }
 
+            }
+            if (charArray[i] == ' ') {
+                contVocales = 0;
             }
 
         }
