@@ -6,11 +6,17 @@ public class PracString2 {
         Scanner sc = new Scanner(System.in);
 
         String fraseUsuario = sc.nextLine();
-        char charArray[] = new char[fraseUsuario.length()];
+        char[] charArray = new char[fraseUsuario.length()];
 
         for (int i = 0; i < charArray.length; i++) {
-            if (charArray[0] != ' ' || charArray[i+1] != ' ') {
-                charArray[i] == charArray[i].toUpperCase();
+            charArray[i] = fraseUsuario.charAt(i);
+        }
+
+        for (int i = 0; i < charArray.length; i++) {
+            charArray[0] = Character.toUpperCase(charArray[i]);
+            if (charArray[i] == ' ') {
+                charArray[i+1] = Character.toUpperCase(charArray[i]);
+                System.out.print(charArray[i]);
             }
         }
 
