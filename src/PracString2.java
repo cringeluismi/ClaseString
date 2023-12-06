@@ -6,19 +6,15 @@ public class PracString2 {
         Scanner sc = new Scanner(System.in);
 
         String fraseUsuario = sc.nextLine();
-        char[] charArray = new char[fraseUsuario.length()];
+        String[] fraseDividida = fraseUsuario.split(" ");
 
-        for (int i = 0; i < charArray.length; i++) {
-            charArray[i] = fraseUsuario.charAt(i);
+        for (int i = 0; i < fraseDividida.length; i++) {
+            char primeraLetra = Character.toUpperCase(fraseDividida[i].charAt(0));
+            fraseDividida[i] = primeraLetra + fraseDividida[i].substring(1);
         }
 
-        for (int i = 0; i < charArray.length; i++) {
-            charArray[0] = Character.toUpperCase(charArray[i]);
-            if (charArray[i] == ' ') {
-                charArray[i+1] = Character.toUpperCase(charArray[i]);
-                System.out.print(charArray[i]);
-            }
-        }
+        String fraseFinal = String.join(" ", fraseDividida);
+        System.out.println(fraseFinal);
 
     }
 }
